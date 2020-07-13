@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building..'
+        bat   "mnv clean"
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+             bat   "mnv test"
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
+    }
+}
